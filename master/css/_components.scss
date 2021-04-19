@@ -1,0 +1,12 @@
+
+.button {
+	background: #fff;
+	padding: 10px 20px;
+	border: 1px #000 solid;
+	color: #000;
+	transition: background .2s easy-out;
+
+	&:hover {
+		background: #{$primay-color};
+	}
+}

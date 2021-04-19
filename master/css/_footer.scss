@@ -1,0 +1,66 @@
+footer {
+	display: grid;
+	grid-template: auto auto / auto auto;
+	background-color: #{$footer-color};
+	padding: 10px 10%;
+	justify-content: space-between;
+	color: #fff;
+}
+
+.footer__details {
+	display: flex;
+	flex-direction: column;
+	margin: 20px 4vw 40px;
+	justify-content: space-around;
+
+	a {
+		color: #fff;
+
+		&:before {
+			// general icon style
+			display: inline-block;
+			padding-right: 3px;
+			width: 24px;
+			text-align: center;
+			vertical-align: middle;
+			font-family: "Font Awesome 5 Free";
+			font-weight: 900;
+		}
+	}
+}
+
+.footer__links {
+	display: grid;
+	grid-template: 1fr 1fr 1fr / 1fr 1fr;
+	grid-gap: 10px 20px;
+	margin: 20px 4vw 40px;
+
+	a {
+		// hover styling
+		color: #fff;
+		border-bottom: 2px #ffffff00 solid;
+
+		&:hover {
+			border-bottom: 2px #fff solid;
+		}
+	}
+}
+
+.footer__copyright {
+	text-align: center;
+	padding: 20px;
+	grid-column: 1 / -1; // fullwidth stretch
+	border-top: 2px white solid;
+}
+
+.footer__address:before {
+	content: "\f3c5";
+}
+
+.footer__phone:before {
+	content: "\f095";
+}
+
+.footer__email:before {
+	content: "\f0e0";
+}

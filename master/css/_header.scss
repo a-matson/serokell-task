@@ -1,0 +1,132 @@
+@import "_vars.scss";
+
+#app { // the use of wrapping div#app is unnecessary
+	// creating layout
+	height: 100vh;
+	display: grid;
+	grid-template-areas: "header" "main";
+
+	main {
+		// main content
+		grid-area: main;
+		overflow: auto; // resizes scrollbar
+	}
+}
+
+#app header {
+	display: grid;
+	grid-template-areas:
+		"logo menu-icon"
+		"menu menu";
+	grid-area: header;
+	align-items: center;
+	background-color: #{$primay-color};
+	min-height: 80px;
+
+	a {
+		display: block; // if small screen menu gets fullwidth
+		color: #000;
+	}
+
+	.header__logo {
+		grid-area: logo;
+		height: 80px; // scale down image
+		padding: 10px 40px;
+
+		img {
+			max-height: 100%;
+			max-width: 100%;
+			object-fit: contain;
+			float: left;
+		}
+	}
+
+	// menu
+
+	.header__menu {
+		grid-area: menu;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		overflow: hidden;
+		// for animation
+		max-height: 0;
+		transition: max-height 0.2s ease-out;
+
+		a {
+			border-top: 1px #0000001a solid;
+			padding: 20px 20px;
+		}
+	}
+
+	// burger menu icon
+
+	.menu__icon {
+		grid-area: menu-icon;
+		cursor: pointer;
+		padding: 20px 40px;
+		justify-self: right;
+		height: 100%;
+
+		> svg {
+			width: 40px;
+			line {
+				stroke: #000;
+				stroke-width: 10;
+				stroke-dasharray: 2, 1;
+			}
+		}
+	}
+
+	// burger menu mechanics
+	.menu__button {
+		display: none;
+	}
+
+	.menu__button:checked ~ .menu__icon {
+		background: #909090;
+	}
+
+	.menu__button:checked ~ .header__menu {
+		max-height: 40vh;
+		background: #909090;
+	}
+
+	@media (min-width: #{$mobile-size}) {
+		grid-template-areas: "logo menu";
+
+		// fix for if menu is opened but screen increases
+		.menu__button:checked ~ .header__menu {
+			background: none;
+		}
+
+		.header__menu {
+			max-height: none;
+			height: 100%;
+
+			li {
+				float: right;
+				height: 100%;
+				display: flex;
+				align-items: center;
+
+				a {
+					border-top: 0px; // remove list details from mobile version
+					padding: 20px 30px;
+				}
+			}
+		}
+
+		.menu__icon {
+			// hiding menu icon
+			display: none;
+		}
+	}
+
+	// accessability
+	.header__menu li:hover,
+	.menu__button:hover,
+	.menu__icon:hover {
+		background-color: #fff;
+	}
+}

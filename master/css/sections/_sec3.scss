@@ -1,0 +1,37 @@
+@import "../_vars.scss";
+
+#main__section3 {
+	background: #{$sec3-bg};
+	min-height: 80vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	form {
+		background: #fff;
+		width: 95%; // full width on small screens w/ margins
+		max-width: 400px;
+		display: grid;
+		grid-gap: 10px;
+		padding: 10px;
+		border: 1px #000 solid;
+		margin-bottom: 20px; // if textarea stretched beyond parent
+
+		> input,
+		textarea {
+			padding: 10px;
+			border: 1px #000 solid;
+		}
+
+		input { // for submit button alignment
+			float: right;
+		}
+
+		textarea {
+			resize: vertical;
+			min-height: 80px;
+			max-height: 50vh;
+		}
+	}
+}
