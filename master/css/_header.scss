@@ -31,14 +31,20 @@
 	// menu
 
 	.header__menu {
+		// for over the content menu
+		position: fixed;
+		top: 80px;
+		width: 100%;
+
 		grid-area: menu;
 		margin: 0;
 		padding: 0;
 		list-style: none;
 		overflow: hidden;
+
 		// for animation
 		max-height: 0;
-		transition: max-height 0.2s ease-out;
+		transition: max-height .2s ease-out, background .2s ease-out;
 
 		a {
 			border-top: 1px #0000001a solid;
@@ -88,6 +94,7 @@
 		}
 
 		.header__menu {
+			position: unset;
 			max-height: none;
 			height: 100%;
 
