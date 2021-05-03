@@ -1,6 +1,6 @@
 @import "_vars.scss";
 
-.app header {
+.header {
 	display: grid;
 	grid-template-areas:
 		"logo menu-icon"
@@ -15,7 +15,7 @@
 		color: #000;
 	}
 
-	.header__logo {
+	&__logo {
 		grid-area: logo;
 		height: 80px; // scale down image
 		padding: 10px 40px;
@@ -29,8 +29,7 @@
 	}
 
 	// menu
-
-	.header__menu {
+	&__menu {
 		// for over the content menu
 		position: fixed;
 		top: 80px;
@@ -53,15 +52,14 @@
 	}
 
 	// burger menu icon
-
-	.menu__icon {
+	&__menu-icon {
 		grid-area: menu-icon;
 		cursor: pointer;
 		padding: 20px 40px;
 		justify-self: right;
 		height: 100%;
 
-		> svg {
+		svg {
 			width: 40px;
 			line {
 				stroke: #000;
@@ -72,15 +70,15 @@
 	}
 
 	// burger menu mechanics
-	.menu__button {
+	&__menu-button {
 		display: none;
 	}
 
-	.menu__button:checked ~ .menu__icon {
+	&__menu-button:checked ~ .header__menu-icon {
 		background: #909090;
 	}
 
-	.menu__button:checked ~ .header__menu {
+	&__menu-button:checked ~ .header__menu {
 		max-height: 40vh;
 		background: #909090;
 	}
@@ -89,11 +87,11 @@
 		grid-template-areas: "logo menu";
 
 		// fix for if menu is opened but screen increases
-		.menu__button:checked ~ .header__menu {
+		&__menu-button:checked ~ .header__menu {
 			background: none;
 		}
 
-		.header__menu {
+		&__menu {
 			position: unset;
 			max-height: none;
 			height: 100%;
@@ -111,7 +109,7 @@
 			}
 		}
 
-		.menu__icon {
+		&__menu-icon {
 			// hiding menu icon
 			display: none;
 		}
@@ -119,8 +117,8 @@
 
 	// accessability
 	.header__menu li:hover,
-	.menu__button:hover,
-	.menu__icon:hover {
+	&__menu-button:hover,
+	&__menu-icon:hover {
 		background-color: #fff;
 	}
 }

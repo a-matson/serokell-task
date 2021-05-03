@@ -1,68 +1,68 @@
 @import "../_vars.scss";
 
-.main__article {
+.article {
 	background: #fff;
 	overflow: auto; // prevent margins outside parent
-}
 
-.article__subsection {
-	display: flex;
-	flex-flow: row wrap; // to have column on small screen
-	align-items: center;
-	justify-content: center;
-	margin: 30px 0;
+	&__subsection {
+		display: flex;
+		flex-flow: row wrap; // to have column on small screen
+		align-items: center;
+		justify-content: center;
+		margin: 30px 0;
 
-	img {
-		// force image to fit parent element
-		max-width: 100%;
-		max-height: 100%;
-	}
-
-	p {
-		padding: 10px 30px;
-	}
-
-	@media (min-width: #{$mobile-size}) {
-		display: grid;
-    grid-template-columns: 1fr 1fr;
-		* {
-			max-width: #{$content-limit/2}; // max- used as of object-fit
-		}
 		img {
-			// limit the size of the image for wide screens
-			max-height: 50vh;
-			width: 100%;
-			max-width: #{$content-limit/2}; // must be forced again
+			// force image to fit parent element
+			max-width: 100%;
+			max-height: 100%;
 		}
-	}
 
-	@media (min-width: #{$mobile-size}) {
-		&-partial {
-			// to add more space for the text now that the image is shifted
-			grid-template-columns: auto minmax(auto, 1fr);
-			// offseting the entire block to increase the area of text
-			img {
-				justify-self: left;
-				position: relative;
-				left: -10%;
-				width: 50vw;
-			}
-			p {
-				max-width: calc(#{$content-limit/2});
-			}
+		p {
+			padding: 10px 30px;
 		}
-	}
 
-	&-reversed {
-		// won't be applied on column structure of mobile screen
-		flex-direction: row-reverse;
 		@media (min-width: #{$mobile-size}) {
-			img {
-				order: 2;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			* {
+				max-width: #{$content-limit/2}; // max- used as of object-fit
 			}
-			> p {
-				order: 1;
-				justify-self: right;
+			img {
+				// limit the size of the image for wide screens
+				max-height: 50vh;
+				width: 100%;
+				max-width: #{$content-limit/2}; // must be forced again
+			}
+		}
+
+		@media (min-width: #{$mobile-size}) {
+			&-partial {
+				// to add more space for the text now that the image is shifted
+				grid-template-columns: auto minmax(auto, 1fr);
+				// offseting the entire block to increase the area of text
+				img {
+					justify-self: left;
+					position: relative;
+					left: -10%;
+					width: 50vw;
+				}
+				p {
+					max-width: calc(#{$content-limit/2});
+				}
+			}
+		}
+
+		&-reversed {
+			// won't be applied on column structure of mobile screen
+			flex-direction: row-reverse;
+			@media (min-width: #{$mobile-size}) {
+				img {
+					order: 2;
+				}
+				p {
+					order: 1;
+					justify-self: right;
+				}
 			}
 		}
 	}
