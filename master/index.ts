@@ -1,4 +1,4 @@
- function contactUsFormHandler(this: HTMLFormElement, event: Event):boolean {
+ function contactUsFormHandler(this: HTMLFormElement, event: Event):void {
 	// collecting data
 	let data = new FormData(this);
 	let entries = data.entries();
@@ -12,12 +12,7 @@
 	
 	// prevent reload
 	event.preventDefault();
-	return false;
 }
 
-const form = document.getElementById('contact-us-form');
-//form?.addEventListener('submit', contactUsFormHandler)
-if(document.body.contains(form)) {
-	// Assing handler
-	form.addEventListener('submit', contactUsFormHandler)
-}
+const form = document.querySelector('#contact-us form');
+form?.addEventListener('submit', contactUsFormHandler)
