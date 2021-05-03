@@ -15,7 +15,7 @@
 	return false;
 }
 
-const form = document.getElementById('contact-us');
+const form = document.getElementById('contact-us-form');
 //form?.addEventListener('submit', contactUsFormHandler)
 if(document.body.contains(form)) {
 	// Assing handler
