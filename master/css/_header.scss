@@ -1,19 +1,6 @@
 @import "_vars.scss";
 
-#app { // the use of wrapping div#app is unnecessary
-	// creating layout
-	height: 100vh;
-	display: grid;
-	grid-template-areas: "header" "main";
-
-	main {
-		// main content
-		grid-area: main;
-		overflow: auto; // resizes scrollbar
-	}
-}
-
-#app header {
+.app header {
 	display: grid;
 	grid-template-areas:
 		"logo menu-icon"

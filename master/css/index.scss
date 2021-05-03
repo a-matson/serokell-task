@@ -2,8 +2,22 @@
 @import "_reset.scss";
 @import "_components.scss";
 
+// Main app structure
+.app {
+	// creating layout
+	height: 100vh;
+	display: grid;
+	grid-template-areas: "header" "main";
+
+	main {
+		// main content
+		grid-area: main;
+		overflow: auto; // resizes scrollbar
+	}
+}
+
 @import "_header.scss";
 @import "_footer.scss";
-@import "sections/sec1.scss";
-@import "sections/sec2.scss";
-@import "sections/sec3.scss";
+@import "sections/_top.scss";
+@import "sections/_article.scss";
+@import "sections/_contact.scss";
