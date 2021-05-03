@@ -36,7 +36,7 @@
 		}
 
 		@media (min-width: #{$mobile-size}) {
-			&-partial {
+			&--partial {
 				// to add more space for the text now that the image is shifted
 				grid-template-columns: auto minmax(auto, 1fr);
 				// offseting the entire block to increase the area of text
@@ -52,7 +52,7 @@
 			}
 		}
 
-		&-reversed {
+		&--reversed {
 			// won't be applied on column structure of mobile screen
 			flex-direction: row-reverse;
 			@media (min-width: #{$mobile-size}) {
