@@ -21,24 +21,25 @@
 			padding: 10px 30px;
 		}
 
-		@media (min-width: #{$mobile-size}) {
+		@media (min-width: $mobile-size) {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			* {
-				max-width: #{$content-limit/2}; // max- used as of object-fit
+				max-width: $content-limit/2; // max- used as of object-fit
 			}
 			img {
 				// limit the size of the image for wide screens
 				max-height: 50vh;
 				width: 100%;
-				max-width: #{$content-limit/2}; // must be forced again
+				max-width: $content-limit/2; // must be forced again
 			}
 		}
 
-		@media (min-width: #{$mobile-size}) {
+		@media (min-width: $mobile-size) {
 			&--partial {
 				// to add more space for the text now that the image is shifted
-				grid-template-columns: auto minmax(auto, 1fr);
+				max-width: $content-limit;
+    		margin: 0 auto;
 				// offseting the entire block to increase the area of text
 				img {
 					justify-self: left;
@@ -47,7 +48,7 @@
 					width: 50vw;
 				}
 				p {
-					max-width: calc(#{$content-limit/2});
+					max-width: $content-limit/2;
 				}
 			}
 		}
@@ -55,7 +56,7 @@
 		&--reversed {
 			// won't be applied on column structure of mobile screen
 			flex-direction: row-reverse;
-			@media (min-width: #{$mobile-size}) {
+			@media (min-width: $mobile-size) {
 				img {
 					order: 2;
 				}
