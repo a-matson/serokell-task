@@ -1,5 +1,9 @@
 @import "_vars.scss";
 
+header {
+	background-color: $primay-color;
+}
+
 .header {
 	display: grid;
 	grid-template-areas:
@@ -7,9 +11,9 @@
 		"menu menu";
 	grid-area: header;
 	align-items: center;
-	background-color: $primay-color;
 	min-height: 80px;
-
+	max-width: $content-limit;
+	margin: 0 auto;
 	a {
 		display: block; // if small screen menu gets fullwidth
 		color: #000;

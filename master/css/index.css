@@ -62,6 +62,10 @@ a {
   overflow: auto;
 }
 
+header {
+  background-color: #bbb;
+}
+
 .header {
   display: -ms-grid;
   display: grid;
@@ -72,8 +76,9 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #bbb;
   min-height: 80px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .header a {
