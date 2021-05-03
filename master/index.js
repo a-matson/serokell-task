@@ -12,9 +12,9 @@ function contactUsFormHandler(event) {
     event.preventDefault();
     return false;
 }
-const form = document.getElementById('contact-us');
-form === null || form === void 0 ? void 0 : form.addEventListener('submit', contactUsFormHandler);
-// if(document.body.contains(form)) {
-// 	// Assing handler
-// 	form.addEventListener('submit', contactUsFormHandler)
-// }
+const form = document.getElementById('contact-us-form');
+//form?.addEventListener('submit', contactUsFormHandler)
+if (document.body.contains(form)) {
+    // Assing handler
+    form.addEventListener('submit', contactUsFormHandler);
+}
