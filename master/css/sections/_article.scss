@@ -19,41 +19,51 @@
 	}
 
 	p {
-		padding: 10px 5vw;
+		padding: 10px 30px;
 	}
 
 	@media (min-width: #{$mobile-size}) {
+		display: grid;
+    grid-template-columns: 1fr 1fr;
 		* {
-			max-width: 40vw; // max- used as of object-fit
-			width: 100%;
+			max-width: #{$content-limit/2}; // max- used as of object-fit
 		}
 		img {
 			// limit the size of the image for wide screens
 			max-height: 50vh;
-			max-width: 40vw; // must be forced again
+			width: 100%;
+			max-width: #{$content-limit/2}; // must be forced again
 		}
 	}
-}
 
-@media (min-width: #{$mobile-size}) {
-	.article__subsection-partial {
-		// offseting the entire block to increase the area of text
-		position: relative;
-		left: -10vw;
-		> p {
-			max-width: 60vw; // increasing space
-			padding: 0 0 0 10vw;
-		}
-	}
-}
-
-.article__subsection-reversed {
-	// won't be applied on column structure of mobile screen
-	flex-direction: row-reverse;
 	@media (min-width: #{$mobile-size}) {
-		> p {
-			// leaving only padding next to the image
-			padding: 0 5vw 0 0;
+		&-partial {
+			// to add more space for the text now that the image is shifted
+			grid-template-columns: auto minmax(auto, 1fr);
+			// offseting the entire block to increase the area of text
+			img {
+				justify-self: left;
+				position: relative;
+				left: -10%;
+				width: 50vw;
+			}
+			p {
+				max-width: calc(#{$content-limit/2});
+			}
+		}
+	}
+
+	&-reversed {
+		// won't be applied on column structure of mobile screen
+		flex-direction: row-reverse;
+		@media (min-width: #{$mobile-size}) {
+			img {
+				order: 2;
+			}
+			> p {
+				order: 1;
+				justify-self: right;
+			}
 		}
 	}
 }
