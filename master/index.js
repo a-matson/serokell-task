@@ -1,13 +1,20 @@
-const form = document.querySelector('form');
-form.onsubmit = (_) => {
+function contactUsFormHandler(event) {
     // collecting data
-    const data = new FormData(form);
-    const entries = data.entries();
+    let data = new FormData(this);
+    let entries = data.entries();
     // displaying data as key:value
     for (let entry of entries) {
-        const key = entry[0];
-        const val = entry[1];
+        let key = entry[0];
+        let val = entry[1];
         console.log(key, val);
     }
-    return false; // prevent reload
-};
+    // prevent reload
+    event.preventDefault();
+    return false;
+}
+const form = document.getElementById('contact-us');
+form === null || form === void 0 ? void 0 : form.addEventListener('submit', contactUsFormHandler);
+// if(document.body.contains(form)) {
+// 	// Assing handler
+// 	form.addEventListener('submit', contactUsFormHandler)
+// }

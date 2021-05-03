@@ -1,9 +1,7 @@
-const form = document.querySelector('form')!;
-
-form.onsubmit = (_) => {
+ function contactUsFormHandler(this: HTMLFormElement, event: Event):boolean {
 	// collecting data
-	const data = new FormData(form);
-	const entries = data.entries();
+	let data = new FormData(this);
+	let entries = data.entries();
 
 	// displaying data as key:value
 	for (let entry of entries) {
@@ -12,5 +10,14 @@ form.onsubmit = (_) => {
 		console.log(key, val);
 	}
 	
-	return false; // prevent reload
-};
+	// prevent reload
+	event.preventDefault();
+	return false;
+}
+
+const form = document.getElementById('contact-us');
+//form?.addEventListener('submit', contactUsFormHandler)
+if(document.body.contains(form)) {
+	// Assing handler
+	form.addEventListener('submit', contactUsFormHandler)
+}
