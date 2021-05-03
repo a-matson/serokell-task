@@ -7,6 +7,6 @@
 	transition: background .2s easy-out;
 
 	&:hover {
-		background: #{$primay-color};
+		background: $primay-color;
 	}
 }

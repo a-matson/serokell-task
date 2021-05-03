@@ -1,9 +1,9 @@
 footer {
-	background-color: #{$footer-color};
+	background-color: $footer-color;
 }
 
 .footer {
-	max-width: #{$content-limit};
+	max-width: $content-limit;
 	margin: 0 auto;
 	display: grid;
 	grid-template: auto auto / auto auto;

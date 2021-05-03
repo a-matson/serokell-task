@@ -7,7 +7,7 @@
 		"menu menu";
 	grid-area: header;
 	align-items: center;
-	background-color: #{$primay-color};
+	background-color: $primay-color;
 	min-height: 80px;
 
 	a {
@@ -83,7 +83,7 @@
 		background: #909090;
 	}
 
-	@media (min-width: #{$mobile-size}) {
+	@media (min-width: $mobile-size) {
 		grid-template-areas: "logo menu";
 
 		// fix for if menu is opened but screen increases

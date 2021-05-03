@@ -344,8 +344,8 @@ footer {
 
 @media (min-width: 768px) {
   .article__subsection--partial {
-    -ms-grid-columns: auto minmax(auto, 1fr);
-        grid-template-columns: auto minmax(auto, 1fr);
+    max-width: 1440px;
+    margin: 0 auto;
   }
   .article__subsection--partial img {
     -ms-grid-column-align: left;
@@ -355,7 +355,7 @@ footer {
     width: 50vw;
   }
   .article__subsection--partial p {
-    max-width: calc(720px);
+    max-width: 720px;
   }
 }
 
